@@ -1,4 +1,8 @@
+// ===============================
+// Amigo Secreto - Lógica principal
+// ===============================
 
+// ✅ Declaramos la lista de amigos desde el inicio
 let amigos = [];
 
 // Al cargar la página, recuperamos la lista guardada en LocalStorage
@@ -53,14 +57,14 @@ function mostrarAmigos() {
 // Sortear un amigo al azar
 function sortearAmigo() {
   if (amigos.length === 0) {
-    alert("Primero agrega al menos un amigo");
+    mostrarMensaje("⚠️ Primero agrega al menos un amigo");
     return;
   }
   const indice = Math.floor(Math.random() * amigos.length);
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigos[indice]}</strong></li>`;
+  resultado.innerHTML = `<li class="animado">🎉 El amigo secreto es: <strong>${amigos[indice]}</strong></li>`;
+  mostrarMensaje("✅ Sorteo realizado con éxito", "ok");
 }
-
 
 // Reiniciar la lista completa
 function reiniciarLista() {
@@ -75,4 +79,5 @@ function reiniciarLista() {
 function guardarEnLocalStorage() {
   localStorage.setItem("amigos", JSON.stringify(amigos));
 }
+
 
