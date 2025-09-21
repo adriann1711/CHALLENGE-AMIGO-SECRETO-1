@@ -1,18 +1,11 @@
-:root {
-  --bg-color: #0f172a;       /* Fondo oscuro elegante */
-  --card-color: #1e293b;     /* Contenedores */
-  --accent: #38bdf8;         /* Azul neón */
-  --accent-glow: #0ea5e9;    /* Azul brillante */
-  --text-color: #f1f5f9;     /* Texto claro */
-  --success: #22c55e;        /* Verde éxito */
-  --error: #ef4444;          /* Rojo error */
-  --font-main: 'Inter', sans-serif;
-}
+/* ===============================
+   Estilo Minimalista - Blanco y Negro
+   =============================== */
 
 body {
-  font-family: var(--font-main);
-  background: var(--bg-color);
-  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  background: #000;       /* Fondo negro */
+  color: #fff;            /* Texto blanco */
   margin: 0;
   padding: 0;
   display: flex;
@@ -22,14 +15,13 @@ body {
 }
 
 .main-content {
-  max-width: 700px;
+  max-width: 600px;
   width: 90%;
   margin-top: 40px;
-  background: var(--card-color);
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
-  animation: fadeIn 0.8s ease-in-out;
+  background: #111;       /* Caja gris oscuro */
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .header-banner {
@@ -38,16 +30,15 @@ body {
 }
 
 .main-title {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent-glow);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
 }
 
 .section-title {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: var(--accent);
+  color: #ddd;
 }
 
 .input-wrapper {
@@ -59,44 +50,41 @@ body {
 
 .input-name {
   flex: 1;
-  padding: 12px;
-  border: 2px solid var(--accent);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text-color);
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
   font-size: 1rem;
   outline: none;
-  transition: 0.3s;
 }
 
 .input-name:focus {
-  border-color: var(--accent-glow);
-  box-shadow: 0 0 10px var(--accent-glow);
+  border-color: #ccc;
 }
 
 button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #fff;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  color: var(--bg-color);
-  background: var(--accent);
-  transition: all 0.3s ease;
+  background: #fff;
+  color: #000;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: var(--accent-glow);
-  box-shadow: 0 0 15px var(--accent-glow);
-  transform: translateY(-2px);
+  background: #000;
+  color: #fff;
 }
 
 .button-container {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .mensaje {
@@ -106,13 +94,11 @@ button:hover {
 }
 
 .mensaje.error {
-  color: var(--error);
-  text-shadow: 0 0 5px rgba(239, 68, 68, 0.6);
+  color: #f55;
 }
 
 .mensaje.ok {
-  color: var(--success);
-  text-shadow: 0 0 5px rgba(34, 197, 94, 0.6);
+  color: #5f5;
 }
 
 .name-list, .result-list {
@@ -122,22 +108,10 @@ button:hover {
 }
 
 .name-list li, .result-list li {
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  padding: 10px;
-  margin: 6px 0;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.name-list li:hover {
-  background: rgba(56, 189, 248, 0.2);
-  transform: scale(1.02);
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 5px 0;
+  background: #000;
+  color: #fff;
 }
