@@ -23,6 +23,9 @@
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo()">Añadir</button>
             </div>
+
+            <!-- Contenedor para mensajes dinámicos -->
+            <p id="mensaje" class="mensaje"></p>
            
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
@@ -31,6 +34,10 @@
                 <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
                     <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                     Sortear amigo
+                </button>
+                <!-- Botón extra para reiniciar -->
+                <button class="button-reset" onclick="reiniciarLista()" aria-label="Reiniciar lista de amigos">
+                    🔄 Reiniciar lista
                 </button>
             </div>
         </section>
