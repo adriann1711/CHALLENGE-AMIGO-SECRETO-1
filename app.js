@@ -1,6 +1,4 @@
-// ===============================
-// Amigo Secreto - Lógica principal
-// ===============================
+
 
 // Array vacío para almacenar los nombres
 let amigos = [];
