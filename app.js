@@ -1,83 +1,19 @@
-// ===============================
-// Amigo Secreto - Lógica principal
-// ===============================
-
+// Array vacío para almacenar los nombres
 let amigos = [];
 
-// Recuperar lista guardada al cargar
-window.onload = () => {
-  const guardados = JSON.parse(localStorage.getItem("amigos"));
-  if (guardados && guardados.length > 0) {
-    amigos = guardados;
-    mostrarAmigos();
-    mostrarMensaje("✅ Lista recuperada de la sesión anterior", "ok");
-  }
-};
-
-// Mostrar mensajes
-function mostrarMensaje(texto, tipo = "error") {
-  const mensaje = document.getElementById("mensaje");
-  mensaje.textContent = texto;
-  mensaje.className = `mensaje ${tipo}`;
-}
-
-// Agregar un nuevo amigo
+// Función para agregar un amigo al array
 function agregarAmigo() {
   const input = document.getElementById("amigo");
   const nombre = input.value.trim();
 
   if (nombre === "") {
-    mostrarMensaje("⚠️ Debes escribir un nombre");
-    input.focus();
-    return;
-  }
-  if (amigos.includes(nombre)) {
-    mostrarMensaje("⚠️ Ese nombre ya está en la lista");
-    input.focus();
+    alert("⚠️ Debes escribir un nombre");
     return;
   }
 
-  amigos.push(nombre);
-  guardarEnLocalStorage();
-  input.value = "";
-  input.focus();
-  mostrarAmigos();
-  mostrarMensaje("✅ Amigo añadido", "ok");
-}
+  amigos.push(nombre); // 👉 Guardamos el nombre en el array
+  console.log(amigos); // 👉 Para confirmar en consola que se está guardando
 
-// Mostrar lista en pantalla
-function mostrarAmigos() {
-  const lista = document.getElementById("listaAmigos");
-  lista.innerHTML = "";
-  amigos.forEach((a) => {
-    const li = document.createElement("li");
-    li.textContent = a;
-    lista.appendChild(li);
-  });
-}
-
-// Sortear un amigo
-function sortearAmigo() {
-  if (amigos.length === 0) {
-    mostrarMensaje("⚠️ Primero agrega al menos un amigo");
-    return;
-  }
-  const indice = Math.floor(Math.random() * amigos.length);
-  const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigos[indice]}</strong></li>`;
-  mostrarMensaje("✅ Sorteo realizado con éxito", "ok");
-}
-
-// Reiniciar lista
-function reiniciarLista() {
-  amigos = [];
-  localStorage.removeItem("amigos");
-  document.getElementById("listaAmigos").innerHTML = "";
-  document.getElementById("resultado").innerHTML = "";
-  mostrarMensaje("🔄 Lista reiniciada", "ok");
-}
-
-// Guardar en LocalStorage
-function guardarEnLocalStorage() {
-  localStorage.setItem("amigos", JSON.stringify(amigos));
+  input.value = "";    // Limpiar el campo
+  input.focus();       // Dejar listo para escribir otro
 }
