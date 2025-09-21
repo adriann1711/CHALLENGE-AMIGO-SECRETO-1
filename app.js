@@ -75,4 +75,7 @@ function reiniciarLista() {
 }
 
 // Guardar lista en LocalStorage
-function guardarEnLocalStorage()// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+function guardarEnLocalStorage() {
+  localStorage.setItem("amigos", JSON.stringify(amigos));
+}
+
