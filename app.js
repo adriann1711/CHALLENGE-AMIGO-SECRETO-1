@@ -53,14 +53,14 @@ function mostrarAmigos() {
 // Sortear un amigo al azar
 function sortearAmigo() {
   if (amigos.length === 0) {
-    mostrarMensaje("⚠️ Primero agrega al menos un amigo");
+    alert("Primero agrega al menos un amigo");
     return;
   }
   const indice = Math.floor(Math.random() * amigos.length);
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `<li class="animado">🎉 El amigo secreto es: <strong>${amigos[indice]}</strong></li>`;
-  mostrarMensaje("✅ Sorteo realizado con éxito", "ok");
+  resultado.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigos[indice]}</strong></li>`;
 }
+
 
 // Reiniciar la lista completa
 function reiniciarLista() {
